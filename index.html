@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Toastmasters Timer Script</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Toastmasters Timer Script</h1>
+    <form id="timer-form">
+      <label for="speech-type">Speech Type:</label>
+      <select id="speech-type">
+        <option value="table-topics" data-times="60,90,120">Table Topics (1, 1.5, 3 mins)</option>
+        <option value="speech-evaluator" data-times="120,150,180">Speech Evaluator (2, 2.5, 3 mins)</option>
+        <option value="icebreaker" data-times="300,360,420">Icebreaker (5, 6, 7 mins)</option>
+        <option value="custom">Add Custom...</option>
+      </select>
+
+      <label for="name">Name:</label>
+      <input type="text" id="name" placeholder="Enter participant's name">
+
+      <label for="time">Timer:</label>
+      <input type="text" id="time" readonly placeholder="00:00">
+
+      <label for="within-time">Within Time:</label>
+      <input type="checkbox" id="within-time">
+
+      <button type="button" id="start-btn">Start</button>
+      <button type="button" id="stop-btn" disabled>Stop</button>
+      <label>Preview:</label>
+      <div class="preview">
+        <button type="button" class="btn-preview" id="default-btn">Default</button>
+        <button type="button" class="btn-preview" id="green-btn">Green</button>
+        <button type="button" lass="btn-preview" id="yellow-btn">Yellow</button>
+        <button type="button" class="btn-preview" id="red-btn">Red</button>
+      </div>
+    </form>
+    <div class="log-section">
+      <h2>Log</h2>
+      <ul id="log-list"></ul>
+    </div>
+    <!-- Custom Time Modal -->
+  <div id="custom-modal" class="modal">
+    <div class="modal-content">
+      <h2>Custom Timing</h2>
+      <label for="custom-green">Green Time (seconds):</label>
+      <input type="number" id="custom-green" placeholder="e.g., 60">
+      <label for="custom-yellow">Yellow Time (seconds):</label>
+      <input type="number" id="custom-yellow" placeholder="e.g., 90">
+      <label for="custom-red">Red Time (seconds):</label>
+      <input type="number" id="custom-red" placeholder="e.g., 120">
+      <button id="save-custom">Save</button>
+      <button id="cancel-custom">Cancel</button>
+    </div>
+  </div>
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
